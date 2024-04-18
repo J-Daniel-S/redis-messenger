@@ -1,1 +1,1 @@
-simple messenger application utilizing spring websockets, redis/redisson, and project reactor.
+simple messenger application utilizing spring websockets and redis/redisson.
