@@ -83,19 +83,15 @@
             startControl.classList.add("invisible");
 
             //establish websocket connection dynamically
-            const uri = 'ws://${window.location.hostname}:${window.location.port}' +
-                '/chat?room=${room}';
+            const uri = `ws://${window.location.hostname}:${window.location.port}` +
+                `/messenger?room=${room}`;
 
             websocket = new WebSocket(uri);
-
-            //onmessage
-            //onopen
-            //onclose
 
             websocket.onmessage = (event) => {
                 let obj = JSON.parse(event.data);
                 let ele = document.createElement("p");
-                ele.innerHTML = `<b>${obje.sender}:</b>&nbsp; ${obj.message}`;
+                ele.innerHTML = `<b>${obj.sender}:</b>&nbsp; ${obj.message}`;
                 history.appendChild(ele);                
 
             }
